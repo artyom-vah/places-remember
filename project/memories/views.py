@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpRequest
 from .models import Place
 from .forms import AddPlaceForm
 from allauth.socialaccount.models import SocialAccount
-
+import requests
 
 def index(request: HttpRequest) -> HttpResponse:
     '''Главная страница''' 
@@ -13,11 +13,11 @@ def index(request: HttpRequest) -> HttpResponse:
 
 @login_required
 def list_places(request: HttpRequest) -> HttpResponse:
-    '''список мест'''
+    '''Список всех мест где был пользователь'''
     places = Place.objects.all()
     vk_account = request.user.socialaccount_set.get(provider='vk')
     first_name = vk_account.extra_data['first_name']
-    last_name = vk_account.extra_data['last_name']
+    last_name = vk_account.extra_data['last_name']      
     context = {
         'places': places,
         'first_name': first_name,

@@ -4,7 +4,8 @@
 {% endblock %}
 
 {% block content %}
-<h2>Введите название этого места и опишите его.</h2>
+
+<h2>Введите название воспоминания и места в котором вы были и опишите его.</h2>
 
     <form action="{% url 'memories:add_place' %}" method="POST">
         {% csrf_token %}        

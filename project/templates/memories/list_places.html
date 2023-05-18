@@ -5,19 +5,14 @@
 {% endblock %}
 
 {% block content %}
+<p>Пользователь: {{ first_name }} {{ last_name }}</p>  
+<img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="Фотография пользователя VK">
+
     {% if places %}
     <div><h2>Вот все ваши воспоминания:</h2></div>
     {% else %}
     <div><h2>У вас нет ни одного воспоминания!</h2></div>
-    {% endif %}  
-
- 
-    <p>
-    Имя: {{ first_name }} 
-    Фамилия: {{ last_name }}
-    </p>
-
-    <img src={{ vk_account.extra_data.photo_200 }} alt="Моя фотография">
+    {% endif %}    
     
     {% for place in places %}
     <div class="alert alert-light"  style="border-color: #bfbfbf;">
