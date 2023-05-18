@@ -67,6 +67,9 @@ SOCIALACCOUNT_PROVIDERS = {
     },
 }
 
+# при входе через соц сети будет перенаправлять на главную страницу
+LOGIN_REDIRECT_URL = '/list' 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

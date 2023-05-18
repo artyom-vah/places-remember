@@ -10,13 +10,15 @@
     </title>
 </head>
     <body>
-    <div class="container">
-        <ul>
-            <li><a href="{% url 'memories:index' %}">Перейти на главную страницу</a></li>
-            <li><a href="{% url 'memories:list_places' %}">Список воспоминаний</a></li>
-            <li><a href="{% url 'memories:add_place' %}">Добавить новые воспоминания</a></li>
-        </ul>
-        {% block content %}
-        {% endblock %}
-    </div>
+        <div class="container">
+            <ul>
+                <li><a href="{% url 'memories:index' %}">Перейти на главную страницу</a></li>
+                <li><a href="{% url 'memories:list_places' %}">Список воспоминаний</a></li>
+                <li><a href="{% url 'memories:add_place' %}">Добавить новые воспоминания</a></li>
+            </ul>
+
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
 </html>

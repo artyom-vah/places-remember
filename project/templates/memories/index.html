@@ -1,21 +1,27 @@
 ﻿{% extends 'base.html' %}
+{% load socialaccount %}
 
 {% block title %} 
 
 {% endblock %}
 
 {% block content %}
-    
-    <div>
-   
-    <h2> Поделитесь своими впечатлениями о местах, которые вы посещаете!</h2>
-    </div>
- 
+
+  <div class="jumbotron">
+    <h1>Places Remember</h1>
+    <p class="lead">Это веб-приложение, которое позволяет пользователям сохранять свои впечатления о посещаемых местах.
+    Главная цель сервиса - помочь людям сохранять и организовывать информацию о местах, которые они посетили или хотят посетить.
+    Пользователи могут создавать записи о местах, добавлять описания, фотографии и комментарии к каждому месту.</p>
+    <h2>Поделитесь своими впечатлениями о местах, которые вы посещаете!</h2>
+  </div>
+
     <br>
 
-    <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="button" class="btn btn-light">Войти через Google</button>
-        <button class="btn btn-primary" type="submit"> Войти через VK</button>
+    <div class="d-grid gap-2 col-6 mx-auto">       
+        <a href="{% provider_login_url 'vk' %}">
+            <button class="btn btn-primary" type="submit">Войти с помощью VK</button>
+        </a>
+        <button type="button" class="btn btn-light">Войти с помощью Google</button>
     </div>
 
 {% endblock %}
