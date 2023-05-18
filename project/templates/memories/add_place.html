@@ -1,0 +1,21 @@
+﻿{% extends 'base.html' %}
+
+{% block title %} 
+{% endblock %}
+
+{% block content %}
+<h2>Введите название этого места и опишите его.</h2>
+
+    <form action="{% url 'memories:add_place' %}" method="POST">
+        {% csrf_token %}        
+        {{ form.title }}
+        <br>
+        {{ form.description }}
+
+        <br>
+        <div class="d-grid gap-1 col-6 mx-auto">
+            <button class="btn btn-primary" type="submit">Сохранить</button>
+        </div>
+    </form>    
+
+{% endblock %}

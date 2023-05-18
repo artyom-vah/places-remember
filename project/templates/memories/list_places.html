@@ -1,0 +1,35 @@
+﻿{% extends 'base.html' %}
+
+
+{% block title %} 
+{% endblock %}
+
+{% block content %}
+
+
+    {% if places %}
+    <div><h2>Вот все ваши воспоминания:</h2></div>
+    {% else %}
+    <div><h2>У вас нет ни одного воспоминания!</h2></div>
+    {% endif %}  
+
+   
+    {% for place in places %}
+    <div class="alert alert-light"  style="border-color: #bfbfbf;">
+        <h3>{{ place.title }}</h3>
+        <p>Описание: {{ place.description }}</p>
+        <span class="text-muted">Публикация: {{ place.pub_date }}</p></span    
+        <p><b>Автор: </b><mark>{{ place.author }}</mark></p>     
+    </div>
+    {% endfor %} 
+
+    
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="{% url 'memories:add_place' %}"
+            <button type="button" class="btn btn-success">Добавить воспоминание</button>
+        </a>
+
+        <button type="button" class="btn btn-danger">Выйти из своего аккаунта</button>        
+    </div>
+
+{% endblock %}
