@@ -1,18 +1,27 @@
 ﻿{% extends 'base.html' %}
+{% load socialaccount %}
+{% load account %}
 
 {% block title %} 
 {% endblock %}
 
 {% block content %}
+{% if user.socialaccount_set.exists %}
+    <p>
+        <h5>Пользователь: {{ first_name }} {{ last_name }} ({% user_display user %})</h5> 
+        <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="Фотография пользователя VK">
+    </p>  
+    <h2>Введите название воспоминания и места в котором вы были и опишите его.</h2>
+{% endif %}
 
-<h2>Введите название воспоминания и места в котором вы были и опишите его.</h2>
+{{ map_html|safe }}  
+
 
     <form action="{% url 'memories:add_place' %}" method="POST">
         {% csrf_token %}        
         {{ form.title }}
         <br>
         {{ form.description }}
-
         <br>
         <div class="d-grid gap-1 col-6 mx-auto">
             <button class="btn btn-primary" type="submit">Сохранить</button>

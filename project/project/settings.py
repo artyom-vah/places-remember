@@ -43,8 +43,9 @@ INSTALLED_APPS = [
     'allauth', 
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.vk',
+    'allauth.socialaccount.providers.google',
+
     
     'memories.apps.MemoriesConfig',
 ]
@@ -67,8 +68,9 @@ SOCIALACCOUNT_PROVIDERS = {
     },
 }
 
-# при входе через соц сети будет перенаправлять на главную страницу
+# при входе/выходе через соц сети будет перенаправлять на страницу
 LOGIN_REDIRECT_URL = '/list' 
+LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
