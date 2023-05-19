@@ -6,11 +6,6 @@
 {% endblock %}
 
 {% block content %}
-<p>
-    <h5>Пользователь: {{ first_name }} {{ last_name }} ({% user_display user %})</h5> 
-    <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="Фотография пользователя VK">
-</p>  
-
 
     {% if places %}
     <div><h2>Вот все ваши воспоминания:</h2></div>
