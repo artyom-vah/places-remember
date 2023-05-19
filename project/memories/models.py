@@ -1,5 +1,5 @@
-from django.db import models
 from django.contrib.auth import get_user_model
+from django.db import models
 
 FIRST_TEXT_STR_15 = 15
 
@@ -13,6 +13,8 @@ class Place(models.Model):
     description = models.TextField(verbose_name='Описание места')
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='place',
                                verbose_name='Автор')
+    latitude = models.FloatField(verbose_name='Широта')
+    longitude = models.FloatField(verbose_name='Долгота')
 
     class Meta:
         ordering = ('pub_date',)

@@ -6,6 +6,11 @@
 {% endblock %}
 
 {% block content %}
+<div>
+    <div class='col-md-10'>
+        {{ map|safe }}
+    </div>    
+</div>
 {% if user.socialaccount_set.exists %}
     <p>
         <h5>Пользователь: {{ first_name }} {{ last_name }} ({% user_display user %})</h5> 
@@ -14,17 +19,18 @@
     <h2>Введите название воспоминания и места в котором вы были и опишите его.</h2>
 {% endif %}
 
-{{ map_html|safe }}  
-
+<br>
 
     <form action="{% url 'memories:add_place' %}" method="POST">
-        {% csrf_token %}        
+        {% csrf_token %}
+        Название места:        
         {{ form.title }}
         <br>
+        Описание(коментарий) об этом месте:
         {{ form.description }}
         <br>
         <div class="d-grid gap-1 col-6 mx-auto">
-            <button class="btn btn-primary" type="submit">Сохранить</button>
+            <button class="btn btn-primary" type="submit">Сохранить воспоминание</button>
         </div>
     </form>    
 

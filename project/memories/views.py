@@ -1,10 +1,11 @@
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpRequest
-from .models import Place
-from .forms import AddPlaceForm
-from allauth.socialaccount.models import SocialAccount
 import folium
+from allauth.socialaccount.models import SocialAccount
+from django.contrib.auth.decorators import login_required
+from django.http import HttpRequest, HttpResponse
+from django.shortcuts import redirect, render
+
+from .forms import AddPlaceForm
+from .models import Place
 
 
 def index(request: HttpRequest) -> HttpResponse:
@@ -37,33 +38,6 @@ def list_places(request: HttpRequest) -> HttpResponse:
     return render(request, 'memories/list_places.html', context)
 
 
-
-# @login_required
-# def add_place(request: HttpRequest) -> HttpResponse:
-#     '''Добавить новое место'''
-#     if request.method == 'POST':
-#         form = AddPlaceForm(request.POST)
-#         if form.is_valid():
-#             place = form.save(commit=False)            
-#             place.author = request.user
-#             print(request.user)
-#             form.save()
-#             return redirect('memories:list_places')
-#             # Создание экземпляра карты Folium
-#             my_map = folium.Map(location=[place.latitude, place.longitude], zoom_start=12)
-
-#             # Добавление маркера на карту
-#             folium.Marker([place.latitude, place.longitude], popup=place.title).add_to(my_map)
-            
-#             map_html = my_map.get_root().render()
-#     else:
-#         form = AddPlaceForm()
-#     context = {
-#         'form': form,
-#         'map_html': map_html
-#     }    
-#     return render(request, 'memories/add_place.html', context)
-
 @login_required
 def add_place(request: HttpRequest) -> HttpResponse:
     '''Добавить новое место'''
@@ -72,25 +46,16 @@ def add_place(request: HttpRequest) -> HttpResponse:
         if form.is_valid():
             place = form.save(commit=False)            
             place.author = request.user
-            form.save()
-
-            # Создание экземпляра карты Folium
-            my_map = folium.Map(location=[place.latitude, place.longitude], zoom_start=12)
-
-            # Добавление маркера на карту
-            folium.Marker([place.latitude, place.longitude], popup=place.title).add_to(my_map)
-
-            # Получение HTML-кода карты
-            map_html = my_map.get_root().render()
-            context = {
-                'form': form,
-                'map_html': map_html
-            }
-            return render(request, 'memories/add_place.html', context)
-    else:
+            form.save()          
+            return redirect('memories:list_places')
+    else:    
         form = AddPlaceForm()
+        m = folium.Map(zoom_start=6)  
+        map=m._repr_html_() 
     context = {
         'form': form,
+        'map': map
     }    
     return render(request, 'memories/add_place.html', context)
+
 
