@@ -51,18 +51,13 @@ def add_place(request: HttpRequest) -> HttpResponse:
 
     # addresses = Place.objects.filter(author=request.user).only('latitude', 'longitude')  # Получаем все места пользователя, выбирая только поля широты и долготы
     addresses = Place.objects.filter(author=request.user).only('title')
-
     marker_list = []  # Создаем пустой список маркеров
-
     for address in addresses:
         if address.latitude and address.longitude:
-            marker_list.append([address.latitude, address.longitude])  # Добавление координат в список marker_list            
- 
+            marker_list.append([address.latitude, address.longitude])  # Добавление координат в список marker_list
     m = folium.Map(zoom_start=10)
-
     for marker in marker_list:
         folium.Marker(marker).add_to(m)
-
     map = m.get_root().render()
     
     context = {

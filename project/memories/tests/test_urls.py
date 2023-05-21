@@ -1,11 +1,9 @@
 from http import HTTPStatus
 
-from django.contrib.auth import get_user_model
 from django.core.cache import cache
 from django.test import Client, TestCase
-from memories.models import Place
+from memories.models import Place, User
 
-User = get_user_model()
 
 class PlaceModelTests(TestCase):  
     @classmethod
