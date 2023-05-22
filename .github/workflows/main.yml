@@ -43,7 +43,6 @@ jobs:
           coverage run --rcfile=.coveragerc manage.py test
           coverage xml -o coverage.xml
 
-
       - name: Upload coverage report to Coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
