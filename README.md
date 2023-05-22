@@ -97,18 +97,35 @@ https://vk.com/dev
 ```
 https://console.cloud.google.com
 ```
-
-
+15. Запуск тестов, все тесты находясь в папке с файлом manage.py выполните команду (все тесты тут places-remember\project\memories\tests\)
+```
+python manage.py test
+coverage run --source='memories' manage.py test -v 2
+```
 
 **Пример готового проекта**
+***Вывод в браузер:***
+![brows_1](https://github.com/artyom-vah/places-remember/blob/main/scrins/main_guest.jpg)
+![brows_2](https://github.com/artyom-vah/places-remember/blob/main/scrins/in_google.jpg)
+![brows_3](https://github.com/artyom-vah/places-remember/blob/main/scrins/in_vk.jpg)
+![brows_4](https://github.com/artyom-vah/places-remember/blob/main/scrins/main_authorized_google.jpg)
+![brows_5](https://github.com/artyom-vah/places-remember/blob/main/scrins/list_authorized_google.jpg)
+![brows_6](https://github.com/artyom-vah/places-remember/blob/main/scrins/add_authorized_google.jpg)
+![brows_7](https://github.com/artyom-vah/places-remember/blob/main/scrins/add_authorized_google_2.jpg)
+![brows_8](https://github.com/artyom-vah/places-remember/blob/main/scrins/list_authorized_google-2.jpg)
+![brows_9](https://github.com/artyom-vah/places-remember/blob/main/scrins/add_authorized_google_3.jpg)
+![brows_10](https://github.com/artyom-vah/places-remember/blob/main/scrins/main_authorized_vk.jpg)
+![brows_11](https://github.com/artyom-vah/places-remember/blob/main/scrins/list_authorized_vk.jpg)
+![brows_12](https://github.com/artyom-vah/places-remember/blob/main/scrins/add_authorized_vk.jpg)
 
 ***Админка:***
-![Admin_1](https://github.com/artyom-vah/director-s-day/blob/main/screens/admin_1.jpg)
-![Admin_2](https://github.com/artyom-vah/director-s-day/blob/main/screens/admin_2.jpg)
-![Admin_3](https://github.com/artyom-vah/director-s-day/blob/main/screens/admin_3.jpg)
-***Вывод в браузер:***
-![brows_1](https://github.com/artyom-vah/director-s-day/blob/main/screens/brows_1.jpg)
-![brows_2](https://github.com/artyom-vah/director-s-day/blob/main/screens/brows_2.jpg)
+![Admin_1](https://github.com/artyom-vah/places-remember/blob/main/scrins/admin_1.jpg)
+![Admin_2](https://github.com/artyom-vah/places-remember/blob/main/scrins/admin_2.jpg)  
+![Admin_3](https://github.com/artyom-vah/places-remember/blob/main/scrins/admin_3.jpg)
+![Admin_4](https://github.com/artyom-vah/places-remember/blob/main/scrins/admin_4.jpg)
+![Admin_5](https://github.com/artyom-vah/places-remember/blob/main/scrins/admin_5.jpg)
+
+
 
 
 
