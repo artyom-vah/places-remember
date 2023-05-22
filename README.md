@@ -1,5 +1,5 @@
 # **“Places Remember”**
-
+[![Coverage Status](https://coveralls.io/repos/github/artyom-vah/places-remember/badge.svg?branch=main)](https://coveralls.io/github/artyom-vah/places-remember?branch=main)
 ## Описание
 
 Цель: Создать веб-приложение, с помощью которого люди смогут хранить свои впечатления о посещаемых местах.
@@ -19,15 +19,11 @@
 
 
 ### **Стек:**
-![python version](https://img.shields.io/badge/Python-3.10.2-green)  
-![django version](https://img.shields.io/badge/Django-4.21-green)
+![python version](https://img.shields.io/badge/Python-3.10.2-green)   ![django version](https://img.shields.io/badge/Django-4.21-green)
 
 
 ### **Дополнительные библиотеки:**
-[![django-allauth](https://img.shields.io/badge/django--allauth-0.54.0-blue?style=flat-square)](https://django-allauth.readthedocs.io/en/latest/)
-[![folium](https://img.shields.io/badge/folium-0.14-blue)](https://python-visualization.github.io/folium/)  
-[![django-smart-selects](https://img.shields.io/badge/geocoder-1.38.1-blue)](https://pypi.org/project/geocoder/)
-[![flake8](https://img.shields.io/badge/flake8-5.0.4-blue)](https://pypi.org/project/flake8/5.0.4/)
+[![django-allauth](https://img.shields.io/badge/django--allauth-0.54.0-blue?style=flat-square)](https://django-allauth.readthedocs.io/en/latest/) [![folium](https://img.shields.io/badge/folium-0.14-blue)](https://python-visualization.github.io/folium/)  [![django-smart-selects](https://img.shields.io/badge/geocoder-1.38.1-blue)](https://pypi.org/project/geocoder/) [![flake8](https://img.shields.io/badge/flake8-5.0.4-blue)](https://pypi.org/project/flake8/5.0.4/)
 
 ### **Запуск проекта в dev-режиме**
 Инструкция ориентирована на операционную систему Windows и утилиту git bash.<br/>
