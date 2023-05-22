@@ -38,7 +38,7 @@ jobs:
         run: |
           cd project/
           python manage.py test
-          coverage run --source='memories' manage.py test -v 2
+          # coverage run --source='memories' manage.py test -v 2
 
       - name: Upload coverage report to Coveralls
         env:
