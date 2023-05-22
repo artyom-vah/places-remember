@@ -1,5 +1,6 @@
 # **“Places Remember”**
 [![Coverage Status](https://coveralls.io/repos/github/artyom-vah/places-remember/badge.svg?branch=main)](https://coveralls.io/github/artyom-vah/places-remember?branch=main)
+
 ## Описание
 
 Цель: Создать веб-приложение, с помощью которого люди смогут хранить свои впечатления о посещаемых местах.
