@@ -35,7 +35,7 @@ def main():
 
     # Run tests with coverage
     if len(sys.argv) > 1 and sys.argv[1] == 'test':
-        cov = coverage.Coverage(source=['memories'])  # Замените 'memories' на ваш модуль или папку
+        cov = coverage.Coverage(source=['memories'])
         cov.start()
 
     try:
