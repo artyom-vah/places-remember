@@ -168,6 +168,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 COVERALLS_REPO_TOKEN = os.environ.get('COVERALLS_REPO_TOKEN', None)
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
