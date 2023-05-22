@@ -151,6 +151,5 @@ yatube/posts/static/
 yatube/media/
 
 #*.pyc
-__pycache__/
-migrations/
-
+# __pycache__/
+# migrations/
