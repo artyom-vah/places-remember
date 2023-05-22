@@ -1,12 +1,9 @@
 # **“Places Remember”**
 [![Coverage Status](https://coveralls.io/repos/github/artyom-vah/places-remember/badge.svg?branch=main)](https://coveralls.io/github/artyom-vah/places-remember?branch=main)
 
-[![Coverage Status](https://coveralls.io/repos/github/artyom-vah/places-remember/badge.svg?branch=main)](https://coveralls.io/github/artyom-vah/places-remember?branch=main)
-
-
 [![places-remember](https://github.com/artyom-vah/places-remember/actions/workflows//main.yml/badge.svg)](https://github.com/artyom-vah/places-remember/actions)
 
-[![Coverage Status](https://coveralls.io/repos/github/artyom-vah/places-remember/badge.svg)](https://coveralls.io/github/artyom-vah/places-remember)
+
 
 ## Описание
 Цель: Создать веб-приложение, с помощью которого люди смогут хранить свои впечатления о посещаемых местах.
