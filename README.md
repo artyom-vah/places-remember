@@ -1,13 +1,12 @@
 # **“Places Remember”**
 [![Coverage Status](https://coveralls.io/repos/github/artyom-vah/places-remember/badge.svg?branch=main)](https://coveralls.io/github/artyom-vah/places-remember?branch=main)
 
-[![places-remember](https://github.com/artyom-vah/places-remember/blob/actions/workflows/workflows/main.yml/badge.svg)](https://github.com/artyom-vah/places-remember/actions)
-
-[![places-remember](https://github.com/artyom-vah/places-remember/workflows/main/badge.svg)](https://github.com/artyom-vah/places-remember/actions)
+[![places-remember](https://github.com/artyom-vah/places-remember/actions/workflows//main.yml/badge.svg)](https://github.com/artyom-vah/places-remember/actions)
 
 
 
 [![places-remember](https://github.com/artyom-vah/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/artyom-vah/yamdb_final/actions)
+
 ## Описание
 .github/workflows/main.yml
 Цель: Создать веб-приложение, с помощью которого люди смогут хранить свои впечатления о посещаемых местах.
