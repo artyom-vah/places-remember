@@ -1,0 +1,49 @@
+{% load socialaccount %}
+{% load account %}
+<header class="p-1 mb-3 border-bottom">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+        </a>
+        {% if user.socialaccount_set.exists %}
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="{% url 'memories:index' %}" class="nav-link px-2 link-dark">Главная</a></li>
+                <li><a href="{% url 'memories:list_places' %}" class="nav-link px-2 link-dark">Список воспоминаний</a></li>
+                <li><a href="{% url 'memories:add_place' %}" class="nav-link px-2 link-dark">Добавить новое воспоминание</a></li>
+                <li><a href="{% url 'logout' %}" class="nav-link px-2 link-dark">Выйти</a></li>
+            </ul>
+            <style>.nav-link:hover {background-color: #f8f9fa; /* Цвет выделения при наведении */ }</style>
+
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <h6>Пользователь: {{ first_name }} {{ last_name }}
+                    <mark> {% user_display user %}</mark>
+                </h6>
+            </form>
+
+            <div>
+                <p>
+                    <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}"
+                         alt="Фотография пользователя VK"
+                         style="border-radius: 10%; width: 20%; height: 30%;">
+                </p>
+            </div>
+
+        {% else %}
+
+            <div class="d-flex justify-content-start">
+                <h1 class="ms-auto">Places Remember</h1>
+            </div>
+
+            <ul class="nav col-12 col-lg-auto mb-5 mb-lg-0 me-lg-3 d-flex ms-auto">
+                <li><a href="{% provider_login_url 'google' %}" class="nav-link px-2 link-dark">Войти с помощью Google</a>
+                </li>
+                <li><a href="{% provider_login_url 'vk' %}" class="nav-link px-2 link-dark">Войти с помощью VK</a></li>
+            </ul>
+            <style>.nav-link:hover {background-color: #f8f9fa; /* Цвет выделения при наведении */ }</style>
+
+        {% endif %}
+    </div>
+</header>

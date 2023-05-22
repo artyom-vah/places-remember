@@ -6,12 +6,12 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),   
-     
-    path('logout/', 
-         auth_views.LogoutView.as_view(), 
-         # auth_views.LogoutView.as_view(next_page=reverse_lazy('memories:index')), 
+    path('accounts/', include('allauth.urls')),
+
+    path('logout/',
+         auth_views.LogoutView.as_view(),
+         # auth_views.LogoutView.as_view(next_page=reverse_lazy('memories:index')),
          name='logout'),
-    
+
     path('', include('memories.urls')),
 ]

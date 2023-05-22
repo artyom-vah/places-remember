@@ -1,8 +1,7 @@
-﻿from django.test import TestCase
-from django.contrib.auth.models import User
-from decimal import Decimal
+﻿from decimal import Decimal
 
-from memories.models import Place
+from django.test import TestCase
+from memories.models import Place, User
 
 
 class PlaceModelTests(TestCase):
@@ -55,4 +54,3 @@ class PlaceModelTests(TestCase):
         )
         places = Place.objects.all()
         self.assertEqual(list(places), [place3, place2, self.place])
-

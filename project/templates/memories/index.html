@@ -1,7 +1,4 @@
 ﻿{% extends 'base.html' %}
-{% load socialaccount %}
-{% load account %}
-
 {% block title %} 
 {% endblock %}
 
@@ -14,22 +11,4 @@
        которые вы посетили. Наша цель - сделать использование данного сервиса привлекательным для пользователей.</p>
        <h2 class="display-5">Поделитесь своими впечатлениями о посещаемых местах!</h2>
   </div>
-
-
-    <br>
-
-    {% comment %} <div class="d-grid gap-2 col-6 mx-auto">  
-      <a href="{% provider_login_url 'vk' %}">
-          <button class="btn btn-primary" type="submit">
-            Войти с помощью VK
-          </button>
-      </a>
-
-      <a href="{% provider_login_url 'google' %}">        
-        <button type="button"  class="btn btn-light">  
-          Войти с помощью Google
-        </button>
-      </a>
-    </div> {% endcomment %}
-
 {% endblock %}

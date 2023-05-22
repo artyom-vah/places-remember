@@ -56,22 +56,26 @@ class ListPlacesViewTests(TestCase):
         response = self.authorized_client.get(reverse('memories:list_places'))
         place_list = response.context.get('places')
         place_list_expected = Place.objects.filter(author=self.user)
-        self.assertQuerysetEqual(place_list, place_list_expected, transform=lambda x: x)
+        self.assertQuerysetEqual(place_list, place_list_expected,
+                                 transform=lambda x: x)
 
     def test_list_places_page_requires_authentication(self):
         """Проверка, что доступ к странице требует аутентификации."""
         response = self.guest_client.get(reverse('memories:list_places'))
-        self.assertIn(response.status_code, (HTTPStatus.FOUND, HTTPStatus.FORBIDDEN))  # 302, 403
+        self.assertIn(response.status_code, (HTTPStatus.FOUND,
+                                             HTTPStatus.FORBIDDEN))  # 302, 403
 
     def test_list_places_page_show_only_user_places(self):
-        """Проверка, что список мест отображается только для текущего пользователя."""
+        """Проверка, что список мест отображается только для текущего
+        пользователя."""
         response = self.authorized_client.get(reverse('memories:list_places'))
         place_list = response.context['places']
         self.assertEqual(len(place_list), 1)
         self.assertEqual(place_list[0], self.place)
 
     def test_list_places_page_displays_social_account_info(self):
-        """Проверка, что информация о социальной учетной записи VK отображается в контексте страницы."""
+        """Проверка, что информация о социальной учетной записи VK
+        отображается в контексте страницы."""
         response = self.authorized_client.get(reverse('memories:list_places'))
         first_name = response.context['first_name']
         last_name = response.context['last_name']
@@ -79,7 +83,8 @@ class ListPlacesViewTests(TestCase):
         self.assertEqual(last_name, 'Vah')
 
     def test_list_places_page_without_social_account_info(self):
-        """Проверка, что соответствующие поля контекста пустые при отсутствии социальной учетной записи VK."""
+        """Проверка, что соответствующие поля контекста пустые при отсутствии
+        социальной учетной записи VK."""
         SocialAccount.objects.all().delete()
         response = self.authorized_client.get(reverse('memories:list_places'))
         first_name = response.context['first_name']
@@ -102,7 +107,8 @@ class ListPlacesViewTests(TestCase):
         response = self.authorized_client.get(reverse('memories:list_places'))
         place_list = response.context['places']
         expected_order = ['Германия', 'Франция', 'Россия']
-        self.assertQuerysetEqual(place_list, expected_order, transform=lambda x: x.title)
+        self.assertQuerysetEqual(place_list, expected_order,
+                                 transform=lambda x: x.title)
 
 
 class AddPlaceViewTests(TestCase):
@@ -130,7 +136,8 @@ class AddPlaceViewTests(TestCase):
             'title': 'Место 1',
             'description': 'Описание места 1',
         }
-        response = self.authorized_client.post(reverse('memories:add_place'), data=form_data, follow=True)
+        response = self.authorized_client.post(reverse('memories:add_place'),
+                                               data=form_data, follow=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)  # 200
         self.assertTemplateUsed(response, 'memories/list_places.html')
         self.assertRedirects(response, reverse('memories:list_places'))
@@ -146,7 +153,8 @@ class AddPlaceViewTests(TestCase):
             'title': '',
             'description': 'Описание места 1',
         }
-        response = self.authorized_client.post(reverse('memories:add_place'), data=form_data)
+        response = self.authorized_client.post(reverse('memories:add_place'),
+                                               data=form_data)
         self.assertEqual(response.status_code, HTTPStatus.OK)  # 200
         self.assertTemplateUsed(response, 'memories/add_place.html')
         self.assertIsInstance(response.context['form'], AddPlaceForm)

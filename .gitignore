@@ -150,3 +150,7 @@ static/
 yatube/posts/static/
 yatube/media/
 
+#*.pyc
+__pycache__/
+migrations/
+
