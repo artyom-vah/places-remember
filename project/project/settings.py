@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'memories.apps.MemoriesConfig',
 ]
 
-SITE_ID = 1 # django-allauth
+# django-allauth
+SITE_ID = 1
 
 # django-allauth
 SOCIALACCOUNT_PROVIDERS = {
