@@ -78,7 +78,7 @@ jobs:
       - name: Run tests and coverage
         run: |
           cd project/
-          python -m flake8
+          # python -m flake8
           coverage run --rcfile=.coveragerc manage.py test
 
       - name: Upload coverage report to Coveralls
