@@ -17,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.10.2   # Здесь укажите версию Python, используемую в вашем проекте
+          python-version: 3.10   # Здесь укажите версию Python, используемую в вашем проекте
 
       - name: Install dependencies
         run: |
