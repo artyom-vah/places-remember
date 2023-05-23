@@ -4,6 +4,7 @@ from http import HTTPStatus
 from allauth.socialaccount.models import SocialAccount
 from django.test import Client, RequestFactory, TestCase
 from django.urls import reverse
+
 from memories.forms import AddPlaceForm
 from memories.models import Place, User
 
