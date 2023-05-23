@@ -12,8 +12,8 @@ class ThresholdException(Exception):
     pass
 
 
-TOKEN = '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'
-GIST_ID = '8c3a00bef8fa3927aa53a4c6163f9467'
+TOKEN = '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'
+GIST_ID = 'de2e181afefe9d9318af159e510c4143'
 COVERAGE_THRESHOLD = float(os.environ.get("COVERAGE_THRESHOLD", 80))
 
 if __name__ == "__main__":
@@ -24,7 +24,6 @@ if __name__ == "__main__":
     test_runner = TestRunner()
 
     import coverage
-
     cov = coverage.Coverage()
     cov.start()
     failures = test_runner.run_tests(['memories'])
@@ -78,7 +77,7 @@ if __name__ == "__main__":
         "X-GitHub-Api-Version": "2022-11-28"
         }
     URL = f"https://api.github.com/gists/{ GIST_ID }"
-    # if result >= COVERAGE_THRESHOLD:
-    #     r = requests.patch(URL, headers=headers, data=json.dumps(payload))
+    if result >= COVERAGE_THRESHOLD:
+        r = requests.patch(URL, headers=headers, data=json.dumps(payload))
     # else:
     #     raise ThresholdException(f"Coverage is below the ({COVERAGE_THRESHOLD}) threshold")

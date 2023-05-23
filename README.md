@@ -1,6 +1,7 @@
 # **“Places Remember”**
 
-![coverage status](https://gist.github.com/artyom-vah/8c3a00bef8fa3927aa53a4c6163f9467/raw/coverage.svg) [![places-remember](https://github.com/artyom-vah/places-remember/actions/workflows//main.yml/badge.svg)](https://github.com/artyom-vah/places-remember/actions)
+![coverage status](https://gist.github.com/artyom-vah/de2e181afefe9d9318af159e510c4143/raw/coverage.svg)
+[![places-remember](https://github.com/artyom-vah/places-remember/actions/workflows/main.yml/badge.svg)](https://github.com/artyom-vah/places-remember/actions)
 
 
 
