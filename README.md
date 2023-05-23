@@ -100,7 +100,10 @@ https://console.cloud.google.com
 15. Запуск тестов, все тесты находясь в папке с файлом manage.py выполните команду (все тесты тут places-remember\project\memories\tests\)
 ```
 python manage.py test
+coverage run --source='memories' manage.py test
 coverage run --source='memories' manage.py test -v 2
+coverage report
+python coverage_cicd.py
 ```
 
 **Пример готового проекта**
