@@ -44,6 +44,7 @@ jobs:
 
       - name: Run  coverage
         run: | 
+          cd project/
           coverage run --rcfile=.coveragerc manage.py test
           coverage xml -o coverage.xml
 
