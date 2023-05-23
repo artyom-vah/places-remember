@@ -1,6 +1,6 @@
 # **“Places Remember”**
 
-![coverage status](https://gist.github.com/artyom-vah/8c3a00bef8fa3927aa53a4c6163f9467/raw/coverage.svg)  [![places-remember](https://github.com/artyom-vah/places-remember/actions/workflows//main.yml/badge.svg)](https://github.com/artyom-vah/places-remember/actions)
+![coverage status](https://gist.github.com/artyom-vah/8c3a00bef8fa3927aa53a4c6163f9467/raw/coverage.svg) [![places-remember](https://github.com/artyom-vah/places-remember/actions/workflows//main.yml/badge.svg)](https://github.com/artyom-vah/places-remember/actions)
 
 
 
@@ -41,7 +41,7 @@ git clone https://github.com/artyom-vah/places-remember.git
 ```
 python -m venv venv
 source venv/Scripts/activate
-``` 
+```
 или сразу так:
 ```
 python -m venv venv && . venv/Scripts/activate

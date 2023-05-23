@@ -29,11 +29,12 @@ if __name__ == "__main__":
     cov.start()
     failures = test_runner.run_tests(['memories'])
     cov.stop()
-    result = cov.report()
+    result = int(cov.report())
+    print(result)
     # sys.exit(bool(failures))
     SVG = f"""
-    <svg xmlns="http://www.w3.org/2000/svg" width="196" height="20">
-    <title>Coverage - { result } </title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="196" height="70">
+    <title>Coverage - { result }%</title>
     <defs>
         <linearGradient id="workflow-fill" x1="50%" y1="0%" x2="50%" y2="100%">
         <stop stop-color="#444D56" offset="0%"></stop>

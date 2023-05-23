@@ -39,8 +39,7 @@ jobs:
         run: |
           cd project/
           python -m flake8 memories --exclude=memories/migrations
-          python manage.py test
-         
+          python manage.py test         
 
       - name: Run  coverage
         run: | 
@@ -48,9 +47,9 @@ jobs:
           coverage run --rcfile=.coveragerc manage.py test
           coverage xml -o coverage.xml
 
-      - name: Upload coverage report to Coveralls
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+      - name: Check coverage
         run: |
-          coveralls --rcfile=project/.coveragerc
+          python coverage_cicd.py
+        env:
+          COVERAGE_THRESHOLD: ${{vars.COVERAGE_THRESHOLD}}
         
