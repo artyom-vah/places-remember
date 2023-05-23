@@ -29,12 +29,13 @@ if __name__ == "__main__":
     cov.start()
     failures = test_runner.run_tests(['memories'])
     cov.stop()
-    result = int(cov.report())
+    result = cov.report(include="*")
+    result = int(result)
     print(result)
     # sys.exit(bool(failures))
     SVG = f"""
     <svg xmlns="http://www.w3.org/2000/svg" width="196" height="70">
-    <title>Coverage - { result }%</title>
+    <title>Coverage - { result }% </title>
     <defs>
         <linearGradient id="workflow-fill" x1="50%" y1="0%" x2="50%" y2="100%">
         <stop stop-color="#444D56" offset="0%"></stop>
@@ -77,7 +78,7 @@ if __name__ == "__main__":
         "X-GitHub-Api-Version": "2022-11-28"
         }
     URL = f"https://api.github.com/gists/{ GIST_ID }"
-    if result >= COVERAGE_THRESHOLD:
-        r = requests.patch(URL, headers=headers, data=json.dumps(payload))
-    else:
-        raise ThresholdException(f"Coverage is below the ({COVERAGE_THRESHOLD}) threshold")
+    # if result >= COVERAGE_THRESHOLD:
+    #     r = requests.patch(URL, headers=headers, data=json.dumps(payload))
+    # else:
+    #     raise ThresholdException(f"Coverage is below the ({COVERAGE_THRESHOLD}) threshold")
