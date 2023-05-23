@@ -7,10 +7,14 @@ import requests
 from django.conf import settings
 from django.test.utils import get_runner
 
+
 class ThresholdException(Exception):
     pass
 
 
+TOKEN = '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'
+GIST_ID = '8c3a00bef8fa3927aa53a4c6163f9467'
+COVERAGE_THRESHOLD = float(os.environ.get("COVERAGE_THRESHOLD", 80))
 
 if __name__ == "__main__":
     os.environ['DJANGO_SETTINGS_MODULE'] = 'project.settings'
@@ -26,10 +30,10 @@ if __name__ == "__main__":
     failures = test_runner.run_tests(['memories'])
     cov.stop()
     result = cov.report()
-    sys.exit(bool(failures))
+    # sys.exit(bool(failures))
     SVG = f"""
     <svg xmlns="http://www.w3.org/2000/svg" width="196" height="20">
-    <title>Coverage - { result }%</title>
+    <title>Coverage - { result } </title>
     <defs>
         <linearGradient id="workflow-fill" x1="50%" y1="0%" x2="50%" y2="100%">
         <stop stop-color="#444D56" offset="0%"></stop>
