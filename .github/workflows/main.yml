@@ -40,11 +40,12 @@ jobs:
           cd project/
           python -m flake8 memories --exclude=memories/migrations
           python manage.py test
-          coverage run --rcfile=.coveragerc manage.py test
-          coverage xml -o coverage.xml
+         
 
       - name: Run  coverage
-        run: |
+        run: | 
+          coverage run --rcfile=.coveragerc manage.py test
+          coverage xml -o coverage.xml
 
       - name: Upload coverage report to Coveralls
         env:
