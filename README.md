@@ -1,9 +1,6 @@
 # **“Places Remember”**
-
-[![places-remember](https://github.com/artyom-vah/places-remember/actions/workflows/main.yml/badge.svg)](https://github.com/artyom-vah/places-remember/actions) 
+[![places-remember](https://github.com/artyom-vah/places-remember/actions/workflows/main.yml/badge.svg)](https://github.com/artyom-vah/places-remember/actions)
 ![coverage status](https://gist.github.com/artyom-vah/de2e181afefe9d9318af159e510c4143/raw/coverage.svg) 
-
-
 ## Описание
 Цель: Создать веб-приложение, с помощью которого люди смогут хранить свои впечатления о посещаемых местах.
 
