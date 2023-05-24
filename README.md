@@ -1,6 +1,7 @@
 # **“Places Remember”**
 [![places-remember](https://github.com/artyom-vah/places-remember/actions/workflows/main.yml/badge.svg)](https://github.com/artyom-vah/places-remember/actions)
 ![coverage status](https://gist.github.com/artyom-vah/de2e181afefe9d9318af159e510c4143/raw/coverage.svg) 
+
 ## Описание
 Цель: Создать веб-приложение, с помощью которого люди смогут хранить свои впечатления о посещаемых местах.
 
@@ -15,6 +16,18 @@
 - Возможно использование любых сторонних пакетов, для стилей рекомендуется использовать Bootstrap.
 - Если что-то не удалось сделать, необходимо описать проблемы в файле README.md.
 
+### **Ссылка на  dockerhub:** 
+https://hub.docker.com/repository/docker/artyomvah/places-remember/general
+```
+1) Cкачать образ c dockerhub: 
+docker pull artyomvah/places-remember:latest
+
+2) Запустить скаченный образ с dockerhub: 
+winpty docker run --name artyomvah-places-remember -it -p 127.0.0.1:8000:8000 artyomvah/places-remember
+
+3) Перейти в браузере на  
+http://127.0.0.1:8000/
+```
 
 
 ### **Стек:**
